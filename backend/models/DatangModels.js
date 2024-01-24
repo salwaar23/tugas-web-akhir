@@ -4,7 +4,7 @@ import db from "../config/Database.js";
 const {DataTypes} = Sequelize;
 
 const Datang = db.define('datang', {
-    id_datang: DataTypes.INTEGER,
+    datangid: DataTypes.STRING,
     nama: DataTypes.STRING,
     pelapor: DataTypes.STRING
 },{

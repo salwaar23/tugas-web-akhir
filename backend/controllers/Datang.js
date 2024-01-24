@@ -34,7 +34,9 @@ export const createDatang = async(req, res) => {
 
 export const updateDatang = async(req, res) => {
     try {
-        await Datang.update(req.body);
+        await Datang.update(req.body, {
+            where: { id: req.params.id },
+        });
         res.status(201).json({msg: "Datang updated"});
     } catch (error) {
         console.log(error.message);

@@ -4,9 +4,9 @@ import db from "../config/Database.js";
 const {DataTypes} = Sequelize;
 
 const Lahir = db.define('lahir', {
-    id_lahir : DataTypes.INTEGER,
+    lahirid : DataTypes.STRING,
     nama : DataTypes.STRING,
-    nokk : DataTypes.INTEGER
+    nokk : DataTypes.STRING
 },{
     freezeTableName:true
 })

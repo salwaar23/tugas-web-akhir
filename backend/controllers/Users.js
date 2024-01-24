@@ -27,7 +27,7 @@ export const createUsers = async(req, res) => {
     const {username, password} = req.body;
     const hashPassword = await argon2.hash(password);
     try {
-        awaitUsers.create({
+        await Users.create({
             username: username,
             password: hashPassword
         });

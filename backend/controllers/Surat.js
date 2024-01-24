@@ -34,7 +34,9 @@ export const createSurat = async(req, res) => {
 
 export const updateSurat = async(req, res) => {
     try {
-        await Surat.update(req.body);
+        await Surat.update(req.body, {
+            where: { id: req.params.id },
+        });
         res.status(201).json({msg: "Surat updated"});
     } catch (error) {
         console.log(error.message);

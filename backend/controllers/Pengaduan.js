@@ -34,7 +34,9 @@ export const createPengaduan = async(req, res) => {
 
 export const updatePengaduan = async(req, res) => {
     try {
-        await Pengaduan.update(req.body);
+        await Pengaduan.update(req.body, {
+            where: { id: req.params.id },
+        });
         res.status(201).json({msg: "Pengaduan updated"});
     } catch (error) {
         console.log(error.message);

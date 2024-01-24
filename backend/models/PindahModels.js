@@ -4,7 +4,7 @@ import db from "../config/Database.js";
 const {DataTypes} = Sequelize;
 
 const Pindah = db.define('pindah', {
-    id_pindah: DataTypes.INTEGER,
+    pindahid: DataTypes.STRING,
     nama: DataTypes.STRING,
     alasan: DataTypes.STRING
 },{

@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { FaDatabase } from "react-icons/fa";
@@ -10,12 +13,12 @@ import { FaPersonCircleXmark } from "react-icons/fa6";
 import { FaPersonCirclePlus } from "react-icons/fa6";
 import { FaPersonCircleMinus } from "react-icons/fa6";
 
-export default function KelolaData(){
+const KelolaData = () => {
     return(
         <div className="container scroll-mx-0">
             <div className="bg-white h-screen">
-                <div className="grid grid-cols-5 gap-x-0">
-                    <div className="bg-blue-500 h-screen w-64">
+                <div className="inline-flex gap-x-0">
+                    <div className="bg-blue-500 h-screen w-[305px]">
                         <div className="text-white text-2xl font-bold flex justify-center mt-4">
                             SETEMA
                         </div>
@@ -23,25 +26,25 @@ export default function KelolaData(){
                         </div>
                         <div className="">
                             <Link to={`/Dashboard`}>
-                                <div className="grid grid-cols-2 gap-x-0 mt-10">
+                                <div className="inline-flex gap-x-0 mt-10">
                                     <div className="ml-5 mt-1 text-white text-xl"><MdOutlineSpaceDashboard /></div>
-                                    <div className="-ml-20 text-white text-xl">Dashboard</div>
+                                    <div className="ml-[30px] text-white text-xl">Dashboard</div>
                                 </div>
                             </Link>
                             <Link to={`/KelolaData`}>
-                                <div className="grid grid-cols-3 gap-x-0 mt-5">
+                                <div className="inline-flex gap-x-0 mt-5">
                                     <div className="ml-5 text-white text-xl mt-1"><FaDatabase /></div>
-                                    <div className="-ml-8 text-white text-xl">Kelola Data</div>
+                                    <div className="ml-[30px] text-white text-xl">Kelola Data</div>
                                 </div>
                             </Link>
-                            <div className="grid grid-cols-2 mt-5 bg-blue-700 py-3">
+                            <div className="inline-flex mt-5 bg-blue-700 py-3">
                                 <div className="mt-1 ml-5 text-white text-xl"><FcStatistics /></div>
-                                <div className="-ml-20 pl-1 text-white text-xl">Sirkulasi Penduduk</div>
+                                <div className="ml-[29px] pl-1 text-white text-xl px-[25px]">Sirkulasi Penduduk</div>
                             </div>
-                            <div className="grid grid-cols-2 mt-5">
+                            <Link to={`/Dokumen`}><div className="inline-flex mt-5">
                                 <div className="mt-1 ml-5 text-white text-xl"><FaMailBulk/></div>
-                                <div className="-ml-20 pl-1 text-white text-xl">Kelola Surat</div>
-                            </div>
+                                <div className="ml-[37px] pl-1 text-white text-xl">Dokumen</div>
+                            </div></Link>
                             <Link to={`/Login`}>
                                 <div className="grid grid-cols-2 mt-64">
                                     <div className="text-white text-xl ml-16 mt-1"><CiLogout /></div>
@@ -83,3 +86,5 @@ export default function KelolaData(){
         </div>
     )
 }
+
+export default KelolaData;

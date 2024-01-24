@@ -34,7 +34,9 @@ export const createKK = async(req, res) => {
 
 export const updateKK = async(req, res) => {
     try {
-        await KK.update(req.body);
+        await KK.update(req.body, {
+            where: { id: req.params.id },
+        });
         res.status(201).json({msg: "KK updated"});
     } catch (error) {
         console.log(error.message);

@@ -8,22 +8,22 @@ import { FcStatistics } from "react-icons/fc";
 import { FaMailBulk } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 
-const AddKematian = () => {
-    const [nik, setnik] = useState("");
-    const [nama, setnama] = useState("");
-    const [penyebab, setpenyebab] = useState("");
+const AddAgenda = () => {
+    const [nama_kegiatan, setkegiatan] = useState("");
+    const [tgl, settgl] = useState("");
+    const [tempat, settempat] = useState("");
     
     const Navigate = useNavigate();
 
-    const saveKematian = async (e) => {
+    const saveAgenda = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5000/Kematian", {
-                nik,
-                nama,
-                penyebab
+            await axios.post("http://localhost:5000/Agenda", {
+                nama_kegiatan,
+                tgl,
+                tempat
             });
-            Navigate("../Kematian");
+            Navigate("../Agenda");
         } catch (error) {
             console.log(error);
         }
@@ -41,24 +41,24 @@ const AddKematian = () => {
                         </div>
                         <div className="">
                             <Link to={`/Dashboard`}>
-                                <div className="grid grid-cols-2 gap-x-0 mt-10">
+                                <div className="grid grid-cols-2 gap-x-0 mt-10 ">
                                     <div className="ml-5 mt-1 text-white text-xl"><MdOutlineSpaceDashboard /></div>
                                     <div className="-ml-20 text-white text-xl">Dashboard</div>
                                 </div>
                             </Link>
                             <Link to={`/KelolaData`}>
-                                <div className="grid grid-cols-3 gap-x-0 mt-5">
+                                <div className="grid grid-cols-3 gap-x-0 mt-5 ">
                                     <div className="ml-5 text-white text-xl mt-1"><FaDatabase /></div>
                                     <div className="-ml-8 text-white text-xl">Kelola Data</div>
                                 </div>
                             </Link>
                             <Link to={`/Sirkulasi`}>
-                                <div className="grid grid-cols-2 mt-5 bg-blue-700 py-3">
+                                <div className="grid grid-cols-2 mt-5">
                                     <div className="mt-1 ml-5 text-white text-xl"><FcStatistics /></div>
                                     <div className="-ml-20 pl-1 text-white text-xl">Sirkulasi Penduduk</div>
                                 </div>
                             </Link>
-                            <Link to={`/Dokumen`}><div className="grid grid-cols-2 mt-5">
+                            <Link to={`/Dokumen`}><div className="grid grid-cols-2 mt-5 bg-blue-700 py-3">
                                 <div className="mt-1 ml-5 text-white text-xl"><FaMailBulk/></div>
                                 <div className="-ml-20 pl-1 text-white text-xl">Dokumen</div>
                             </div></Link>
@@ -70,48 +70,48 @@ const AddKematian = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="w-auto mt-4 ml-4 text-2xl"> Tambah Data Kematian
-                        <form onSubmit={saveKematian}>
-                        <div className="w-full lg:mx-auto mt-20 pl-5">
-                                <label className="font-bold text-black text-sm">NIK</label>
+                    <div className="w-auto mt-4 ml-4 text-2xl"> Tambah Agenda Baru 
+                        <form onSubmit={saveAgenda}>
+                            <div className="w-full lg:mx-auto mt-20 pl-5">
+                                <label className="font-bold text-black text-sm">Nama Kegiatan</label>
                                     <div className="control">
                                         <input
                                         type="text"
                                         className="text-sm shadow-sm rounded-md border-none outline-none bg-sky-50 w-96 h-7 px-[15px] focus:shadow-md duration-500 focus:bg-sky-100 my-2"
-                                        value={nik}
-                                        onChange={(e) => setnik(e.target.value)}
-                                        placeholder="NIK"
+                                        value={nama_kegiatan}
+                                        onChange={(e) => setkegiatan(e.target.value)}
+                                        placeholder="Nama Kegiatan"
                                         />
                                     </div>
                             </div>
-                            <div className="w-full lg:mx-auto pl-5">
-                                <label className="font-bold text-black text-sm">Nama</label>
-                                    <div className="control">
-                                        <input
-                                        type="text"
-                                        className="text-sm shadow-sm rounded-md border-none outline-none bg-sky-50 w-96 h-7 px-[15px] focus:shadow-md duration-500 focus:bg-sky-100 my-2"
-                                        value={nama}
-                                        onChange={(e) => setnama(e.target.value)}
-                                        placeholder="Nama"
-                                        />
-                                    </div>
+                            <div className="w-full lg:mx-auto mt-5 pl-5">
+                                <label className="font-bold text-sm">Tanggal</label>
+                                <div className="control">
+                                    <input 
+                                    type="text"
+                                    className="text-sm shadow-sm rounded-md border-none outline-none bg-sky-50 w-96 h-7 px-[15px] focus:shadow-md dration-500 focus:bg-sky-100 my-2"
+                                    value={tgl}
+                                    onChange={(e) => settgl(e.target.value)}
+                                    placeholder="Tanggal"
+                                    />
+                                </div>
                             </div>
-                            <div className="w-full lg:mx-auto pl-5">
-                                <label className="font-bold text-black text-sm">Penyebab</label>
-                                    <div className="control">
-                                        <input
-                                        type="text"
-                                        className="text-sm shadow-sm rounded-md border-none outline-none bg-sky-50 w-96 h-7 px-[15px] focus:shadow-md duration-500 focus:bg-sky-100 my-2"
-                                        value={penyebab}
-                                        onChange={(e) => setpenyebab(e.target.value)}
-                                        placeholder="Penyebab"
-                                        />
-                                    </div>
+                            <div className="w-full lg:mx-auto mt-5 pl-5">
+                                <label className="font-bold text-sm">Tempat</label>
+                                <div className="control">
+                                    <input 
+                                    type="text"
+                                    className="text-sm shadow-sm rounded-md border-none outline-none bg-sky-50 w-96 h-7 px-[15px] focus:shadow-md dration-500 focus:bg-sky-100 my-2"
+                                    value={tempat}
+                                    onChange={(e) => settempat(e.target.value)}
+                                    placeholder="Tempat"
+                                    />
+                                </div>
                             </div>
                             <button type="submit" className="ml-5 rounded-md bg-blue-600 text-white px-4 py-1 text-sm font-serif mt-10">
                                 Tambah
                             </button>
-                        </form>                        
+                        </form>
                     </div>
                 </div>            
             </div>
@@ -119,4 +119,4 @@ const AddKematian = () => {
     );
 };
 
-export default AddKematian;
+export default AddAgenda;

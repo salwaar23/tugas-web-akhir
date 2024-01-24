@@ -43,6 +43,7 @@ const EditWarga = () => {
 
     const getWargaById = async () => {
         const response = await axios.get(`http://localhost:5000/warga/${id}`);
+        console.log(response)
         setnokk(response.data.nokk);
         setnik(response.data.nik);
         setnama(response.data.nama_warga);
@@ -64,13 +65,13 @@ const EditWarga = () => {
                         </div>
                         <div className="">
                             <Link to={`/Dashboard`}>
-                                <div className="grid grid-cols-2 gap-x-0 mt-10 bg-blue-700 py-3">
+                                <div className="grid grid-cols-2 gap-x-0 mt-10 ">
                                     <div className="ml-5 mt-1 text-white text-xl"><MdOutlineSpaceDashboard /></div>
                                     <div className="-ml-20 text-white text-xl">Dashboard</div>
                                 </div>
                             </Link>
                             <Link to={`/KelolaData`}>
-                                <div className="grid grid-cols-3 gap-x-0 mt-5">
+                                <div className="grid grid-cols-3 gap-x-0 mt-5 bg-blue-700 py-3">
                                     <div className="ml-5 text-white text-xl mt-1"><FaDatabase /></div>
                                     <div className="-ml-8 text-white text-xl">Kelola Data</div>
                                 </div>
@@ -81,10 +82,10 @@ const EditWarga = () => {
                                     <div className="-ml-20 pl-1 text-white text-xl">Sirkulasi Penduduk</div>
                                 </div>
                             </Link>
-                            <div className="grid grid-cols-2 mt-5">
+                            <Link to={`/Dokumen`}><div className="grid grid-cols-2 mt-5">
                                 <div className="mt-1 ml-5 text-white text-xl"><FaMailBulk/></div>
-                                <div className="-ml-20 pl-1 text-white text-xl">Kelola Surat</div>
-                            </div>
+                                <div className="-ml-20 pl-1 text-white text-xl">Dokumen</div>
+                            </div></Link>
                             <Link to={`/Login`}>
                                 <div className="grid grid-cols-2 mt-64">
                                     <div className="text-white text-xl ml-16 mt-1"><CiLogout /></div>
@@ -114,7 +115,7 @@ const EditWarga = () => {
                                         <input
                                         type="text"
                                         className="text-sm shadow-sm rounded-md border-none outline-none bg-sky-50 w-96 h-7 px-[15px] focus:shadow-md duration-500 focus:bg-sky-100 my-2"
-                                        value={nokk}
+                                        value={usia}
                                         onChange={(e) => setUsia(e.target.value)}
                                         placeholder="Usia"
                                         />
@@ -129,7 +130,7 @@ const EditWarga = () => {
                                         <input
                                         type="text"
                                         className="text-sm shadow-sm rounded-md border-none outline-none bg-sky-50 w-96 h-7 px-[15px] focus:shadow-md duration-500 focus:bg-sky-100 my-2"
-                                        value={nokk}
+                                        value={nik}
                                         onChange={(e) => setnik(e.target.value)}
                                         placeholder="NIK"
                                         />
@@ -171,7 +172,7 @@ const EditWarga = () => {
                                         <input
                                         type="text"
                                         className="text-sm shadow-sm rounded-md border-none outline-none bg-sky-50 w-96 h-7 px-[15px] focus:shadow-md duration-500 focus:bg-sky-100 my-2"
-                                        value={nokk}
+                                        value={pekerjaan}
                                         onChange={(e) => setPekerjaan(e.target.value)}
                                         placeholder="Pekerjaan"
                                         />
@@ -189,7 +190,7 @@ const EditWarga = () => {
                                                 >
                                                 <option value=" "></option>
                                                 <option value="Perempuan">Perempuan</option>
-                                                <option value="Laki-laki">Laki-laki</option>
+                                                <option value="Laki-laki">Laki-Laki</option>
                                             </select>
                                         </div>
                                     </div>

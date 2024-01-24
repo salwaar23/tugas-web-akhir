@@ -34,7 +34,9 @@ export const createPindah = async(req, res) => {
 
 export const updatePindah = async(req, res) => {
     try {
-        await Pindah.update(req.body);
+        await Pindah.update(req.body, {
+            where: { id: req.params.id },
+        });
         res.status(201).json({msg: "Pindah updated"});
     } catch (error) {
         console.log(error.message);

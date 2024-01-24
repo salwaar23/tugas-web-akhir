@@ -4,7 +4,7 @@ import db from "../config/Database.js";
 const {DataTypes} = Sequelize;
 
 const Kematian = db.define('kematian', {
-    nik: DataTypes.INTEGER,
+    nik: DataTypes.STRING,
     nama: DataTypes.STRING,
     penyebab: DataTypes.STRING
 },{

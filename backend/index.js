@@ -10,6 +10,9 @@ import KKRoute from "./routes/KKRoute.js";
 import LahirRoute from "./routes/LahirRoute.js";
 import PengaduanRoute from "./routes/PengaduanRoute.js";
 import SuratRoute from "./routes/SuratRoute.js";
+import Agenda from "./routes/Agenda.js";
+import Pindah from "./routes/Pindah.js";
+import Keluarga from "./routes/KeluargaRoutes.js";
 
 const app = express();
 
@@ -29,6 +32,9 @@ app.use(KKRoute);
 app.use(SuratRoute);
 app.use(LahirRoute);
 app.use(PengaduanRoute);
+app.use(Agenda);
+app.use(Pindah);
+app.use(Keluarga);
 
 app.listen(5000, () => {
   console.log('server up and running ...');

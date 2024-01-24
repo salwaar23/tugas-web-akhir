@@ -12,8 +12,8 @@ export default function KelolaData(){
     return(
         <div className="container scroll-mx-0">
             <div className="bg-white h-screen">
-                <div className="grid grid-cols-5 gap-x-0">
-                    <div className="bg-blue-500 h-screen w-64">
+                <div className="inline-flex gap-x-0">
+                <div className="bg-blue-500 h-screen w-[265px]">
                         <div className="text-white text-2xl font-bold flex justify-center mt-4">
                             SETEMA
                         </div>
@@ -23,25 +23,25 @@ export default function KelolaData(){
                             <Link to={`/Dashboard`}>
                                 <div className="grid grid-cols-2 gap-x-0 mt-10">
                                     <div className="ml-5 mt-1 text-white text-xl"><MdOutlineSpaceDashboard /></div>
-                                    <div className="-ml-20 text-white text-xl">Dashboard</div>
+                                    <div className="-ml-20 pl-5 text-white text-xl">Dashboard</div>
                                 </div>
                             </Link>
                             <Link to={`/KelolaData`}>
-                                <div className="grid grid-cols-3 gap-x-0 mt-5 bg-blue-700 py-3">
+                                <div className="grid grid-cols-2 gap-x-0 mt-5 bg-blue-700 py-3">
                                     <div className="ml-5 text-white text-xl mt-1"><FaDatabase /></div>
-                                    <div className="-ml-8 text-white text-xl">Kelola Data</div>
+                                    <div className="-ml-20 pl-5 text-white text-xl">Kelola Data</div>
                                 </div>
                             </Link>
                             <Link to={`/Sirkulasi`}>
                                 <div className="grid grid-cols-2 mt-5">
                                     <div className="mt-1 ml-5 text-white text-xl"><FcStatistics /></div>
-                                    <div className="-ml-20 pl-1 text-white text-xl">Sirkulasi Penduduk</div>
+                                    <div className="-ml-20 pl-5 text-white text-xl">Sirkulasi Penduduk</div>
                                 </div>
                             </Link>
-                            <div className="grid grid-cols-2 mt-5">
+                            <Link to={`/Dokumen`}><div className="grid grid-cols-2 mt-5">
                                 <div className="mt-1 ml-5 text-white text-xl"><FaMailBulk/></div>
-                                <div className="-ml-20 pl-1 text-white text-xl">Kelola Surat</div>
-                            </div>
+                                <div className="-ml-20 pl-5 text-white text-xl">Dokumen</div>
+                            </div></Link>
                             <Link to={`/Login`}>
                                 <div className="grid grid-cols-2 mt-64">
                                     <div className="text-white text-xl ml-16 mt-1"><CiLogout /></div>
@@ -50,8 +50,8 @@ export default function KelolaData(){
                             </Link>
                         </div>
                     </div>
-                    <div className="ml-5 mt-5 text-2xl w-auto">Kelola Data
-                        <div className="grid grid-cols-2 mt-10">
+                    <div className="ml-5 mt-5 text-2xl w-auto">Kelola Data<br />
+                        <div className="inline-flex mt-10">
                             <Link to={`/Warga`}>
                                 <div className="rounded-md w-80 h-40 bg-blue-200 text-xl ml-3 pt-4">
                                     <p className="text-xl text-blue-700 font-bold flex justify-center">Kelola Data Warga</p>
@@ -60,7 +60,7 @@ export default function KelolaData(){
                             </Link>
                             
                             <Link to={`/KK`}>
-                                <div className="rounded-md w-80 h-40 bg-blue-200 ml-64 pt-4 ">
+                                <div className="rounded-md w-80 h-40 bg-blue-200 ml-5 pt-4 ">
                                     <p className="text-xl text-blue-700 font-bold flex justify-center">Kelola Data KK</p>
                                     <p className="mt-10 ml-56 text-7xl opacity-50"><FaPeopleRoof /></p>
                                 </div> 
